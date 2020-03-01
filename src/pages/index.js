@@ -1,21 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { MuiThemeProvider, createMuiTheme} from "@material-ui/core";
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
+import HomePage from '../components/about'
+import Projects from '../components/projects'
+import Tools from '../components/tools'
+import Footer from '../components/footer'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#98ee99",
+      main: "#66bb6a",
+      dark: "#338a3e",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#ffd95b",
+      main: "#ffa726",
+      dark: "#c77800",
+      contrastText: "#000",
+    },
+  },
+})
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+    <Layout>
+      <HomePage />
+      <Projects />
+    <Tools />
+    <Footer/>
+    </Layout>
 )
 
 export default IndexPage

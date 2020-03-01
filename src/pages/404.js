@@ -1,14 +1,30 @@
-import React from "react"
+import React, { Fragment } from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
+
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  <Fragment>
+    <Layout>
+      <SEO title="404: Not found" />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ color: "red", padding: "50px" }}>NOT FOUND</h1>
+        <p>
+          You want to go to a route that doesn&#39;t exist... please, go back.
+        </p>
+        <Link to="/">Go back to the homepage</Link>
+      </div>
+    </Layout>
+  </Fragment>
 )
 
 export default NotFoundPage
